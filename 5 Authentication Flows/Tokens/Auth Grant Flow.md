@@ -11,20 +11,29 @@ client_id=e2a55bd5-ae5c-41c0-8243-de710e5bf8a2
 &scope=User.Read Mail.Send Mail.Read
 &state=12345
 ```
+Using Postman to format our URL
 
 ![Lab Overview](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowGet.png)
 
-Our code is then returned
+Using a browser we login and our code is then returned
+As our response_mode is equal to **query** the code is returned in the address bar.  Try **form_post** and inspect the header.
+
 ![Lab Overview](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowCode.png)
 
 ### Get Access Token
-Post
+Now that we have our code we can request the access token from the authorization endpoint. 
+
+We will simulate this in Postman
+
 ![Lab Overview](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowGetAccessToken01.png)
 
 ![Lab Overview](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowGetAccessToken02.png)
 
-## PKCE
-### Create Code Verity using PowerShell
+## Proof Key for Code Exchange (PKCE)
+
+Use an online tool [https://tonyxu-io.github.io/pkce-generator/](https://tonyxu-io.github.io/pkce-generator/)
+
+### Create Code_Verify using PowerShell
 ```powershell
 Add-Type -AssemblyName System.Web
 $RandomNumberGenerator = New-Object System.Security.Cryptography.RNGCryptoServiceProvider
@@ -33,7 +42,7 @@ $RandomNumberGenerator.GetBytes($Bytes)
 $codeVerify = [System.Web.HttpServerUtility]::UrlTokenEncode($Bytes)
 ```
 
-### Create Code Challenge using PowerShell
+### Create Code_Challenge using PowerShell
 ```powershell
 $hasher = [System.Security.Cryptography.HashAlgorithm]::Create('sha256')
 $hash = $hasher.ComputeHash([System.Text.Encoding]::UTF8.GetBytes($codeVerify))
