@@ -1,22 +1,21 @@
 # Authorization Code Flow
 Reference [Microsoft identity platform and OAuth 2.0 authorization code flow - Microsoft identity platform | Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow)
 
-### Create a new Application Registration
+### Create a new Application Registration and client secret
 ![App Registration](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowAppRegistration.png)
 
-## Create a Client Secret
 
 |               |               |
 | ------------- | ------------- |
 | Client ID | 53beb5ba-7615-48d1-bfc4-ab25744a0916 |
 | Client Secret | -2V~PY_35799_nNCumu_-j1oeE0lpHy1Ar |
 
-## Grant Admin Consent
+### Grant Admin Consent
 
 ![Admin Consent](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowAdminConsent.png)
 
-### Get Token
-Request a token using HTTP GET
+### Get our code token
+Request a token using HTTP GET request to the authorization endpoint
 ```
 https://login.microsoftonline.com/808b7ce5-9924-441e-ae53-3e42fd8a6d43/oauth2/v2.0/authorize?
 client_id=53beb5ba-7615-48d1-bfc4-ab25744a0916
@@ -42,9 +41,18 @@ We used **form_post** so our code is returned inside the form data. We can see t
 ```
 
 ### Get Access Token
-Now that we have our **code** we can request the access token from the authorization endpoint. 
+Now that we have our **code** we can request the access token from the token endpoint. 
 
 We will simulate this in Postman using a HTTP POST request.
+
+| Kwy  | Value |
+| ------------- | ------------- |
+| code  | 0.AUE...AbSxiQIAA |
+| grant_type  | authorization_code |
+| client_id  | 53beb5ba-7615-48d1-bfc4-ab25744a0916 |
+| redirect_uri  | https://jwt.ms |
+| client_secret  | -2V~PY_35799_nNCumu_-j1oeE0lpHy1Ar |
+| scope  | .default |
 
 ![Post Postman](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowPostPostman.png)
 
@@ -60,14 +68,7 @@ We can decode our **Access Token** to see what's inside.
 ![JWT Decode](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowJWTDecoded.png)
 
 
-```JWT
-jwt.ms
-
-Enter token below (it never leaves your browser):
-eyJ0eXAiOiJKV1QiLCJub25jZSI6Im5ndjd3OE8ydUt4bTIxVUR6WHowbW13dzhlM0xCRXltc2NUUUFrTl9XOVkiLCJhbGciOiJSUzI1NiIsIng1dCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyIsImtpZCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC84MDhiN2NlNS05OTI0LTQ0MWUtYWU1My0zZTQyZmQ4YTZkNDMvIiwiaWF0IjoxNjE2NDc2MzA0LCJuYmYiOjE2MTY0NzYzMDQsImV4cCI6MTYxNjQ4MDIwNCwiYWNjdCI6MCwiYWNyIjoiMSIsImFjcnMiOlsidXJuOnVzZXI6cmVnaXN0ZXJzZWN1cml0eWluZm8iLCJ1cm46bWljcm9zb2Z0OnJlcTEiLCJ1cm46bWljcm9zb2Z0OnJlcTIiLCJ1cm46bWljcm9zb2Z0OnJlcTMiLCJjMSIsImMyIiwiYzMiLCJjNCIsImM1IiwiYzYiLCJjNyIsImM4IiwiYzkiLCJjMTAiLCJjMTEiLCJjMTIiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTYiLCJjMTciLCJjMTgiLCJjMTkiLCJjMjAiLCJjMjEiLCJjMjIiLCJjMjMiLCJjMjQiLCJjMjUiXSwiYWlvIjoiQVNRQTIvOFRBQUFBViszMndsbEJCQ3lnQ2hQdThKL0c1ZGJTd1pTWStHQktRcWZUaFFMVFJEOD0iLCJhbXIiOlsicHdkIl0sImFwcF9kaXNwbGF5bmFtZSI6IkFuQXV0aExhYi1BdXRoQ29kZUZsb3ciLCJhcHBpZCI6IjUzYmViNWJhLTc2MTUtNDhkMS1iZmM0LWFiMjU3NDRhMDkxNiIsImFwcGlkYWNyIjoiMSIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjE0LjIwMS4yMC4yIiwibmFtZSI6IkNsb3VkIiwib2lkIjoiMDlhODcwNDctNGZjYi00ZTVlLWFiNDgtYTE3ZWY5MzU3MGVhIiwicGxhdGYiOiIzIiwicHVpZCI6IjEwMDMyMDAxMTU2RjY4MEMiLCJyaCI6IjAuQVVFQTVYeUxnQ1NaSGtTdVV6NUNfWXB0UTdxMXZsTVZkdEZJdjhTckpYUktDUlpCQUhrLiIsInNjcCI6IlVzZXIuUmVhZCBwcm9maWxlIG9wZW5pZCBlbWFpbCIsInN1YiI6IkgtTEpYMVVzNUlrbW5USlExNHJMVXpRWjFxNGR6bkd3aXBxVE5XUzNNTjAiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiT0MiLCJ0aWQiOiI4MDhiN2NlNS05OTI0LTQ0MWUtYWU1My0zZTQyZmQ4YTZkNDMiLCJ1bmlxdWVfbmFtZSI6IkNsb3VkQGNvcHJ0ZWNoNC50ayIsInVwbiI6IkNsb3VkQGNvcHJ0ZWNoNC50ayIsInV0aSI6ImdqYjBUWHMyVWtTT040ME1hXzBVQUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbImI3OWZiZjRkLTNlZjktNDY4OS04MTQzLTc2YjE5NGU4NTUwOSJdLCJ4bXNfc3QiOnsic3ViIjoiVl9HeFVPZFZ1UkV6aWxFVmdNS2xUMXc5b092UXQyMlIzaW9tVjlRemdMZyJ9LCJ4bXNfdGNkdCI6MTUzMDgzNDM2OH0.m8nmD9MsSnwdfBVuoinCMRHBikL08Gurd6dr7Bj6HtN-cZe4G7UXNXCs42fZRYmTHXDcs5Y4QgQZrSBNRR-X3fDijBQgzl7zBtCy0XcAYgSEbRAI87Qt9PQXm5vlo7h471JAW9UBffL9OXcnxXXyAK7uPSlIdZWMGQ3Ot6unTRhwjHaagnktC1kJvhohZ6NeCrOYiCu35xpV13QPbFVsW_BQtoUP2RtYyxGRlO3RLTkm8X6a42v5hrm5c5vr-a_EKAl7c6PUC1uZAGpIEHBQyFxWr_W-VMsFCbGjw01ika59qd6T-Mklx0PDwtkVFe7MavKweypvDOACgjxVLSE61A
-This token was issued by Azure Active Directory.
-Decoded Token
-Claims
+```Javascript
 {
   "typ": "JWT",
   "nonce": "ngv7w8O2uKxm21UDzXz0mmww8e3LBEymscTQAkN_W9Y",
