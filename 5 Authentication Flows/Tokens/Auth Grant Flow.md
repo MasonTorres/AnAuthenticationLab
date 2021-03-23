@@ -6,6 +6,7 @@ Reference [Microsoft identity platform and OAuth 2.0 authorization code flow - M
 
 ## Create a Client Secret
 
+| ------------- | ------------- |
 | Client ID | 53beb5ba-7615-48d1-bfc4-ab25744a0916 |
 | Client Secret | -2V~PY_35799_nNCumu_-j1oeE0lpHy1Ar |
 
@@ -58,8 +59,93 @@ We can decode our **Access Token** to see what's inside.
 ![JWT Decode](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowJWTDecoded.png)
 
 
+```JWT
+jwt.ms
+
+Enter token below (it never leaves your browser):
+eyJ0eXAiOiJKV1QiLCJub25jZSI6Im5ndjd3OE8ydUt4bTIxVUR6WHowbW13dzhlM0xCRXltc2NUUUFrTl9XOVkiLCJhbGciOiJSUzI1NiIsIng1dCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyIsImtpZCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC84MDhiN2NlNS05OTI0LTQ0MWUtYWU1My0zZTQyZmQ4YTZkNDMvIiwiaWF0IjoxNjE2NDc2MzA0LCJuYmYiOjE2MTY0NzYzMDQsImV4cCI6MTYxNjQ4MDIwNCwiYWNjdCI6MCwiYWNyIjoiMSIsImFjcnMiOlsidXJuOnVzZXI6cmVnaXN0ZXJzZWN1cml0eWluZm8iLCJ1cm46bWljcm9zb2Z0OnJlcTEiLCJ1cm46bWljcm9zb2Z0OnJlcTIiLCJ1cm46bWljcm9zb2Z0OnJlcTMiLCJjMSIsImMyIiwiYzMiLCJjNCIsImM1IiwiYzYiLCJjNyIsImM4IiwiYzkiLCJjMTAiLCJjMTEiLCJjMTIiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTYiLCJjMTciLCJjMTgiLCJjMTkiLCJjMjAiLCJjMjEiLCJjMjIiLCJjMjMiLCJjMjQiLCJjMjUiXSwiYWlvIjoiQVNRQTIvOFRBQUFBViszMndsbEJCQ3lnQ2hQdThKL0c1ZGJTd1pTWStHQktRcWZUaFFMVFJEOD0iLCJhbXIiOlsicHdkIl0sImFwcF9kaXNwbGF5bmFtZSI6IkFuQXV0aExhYi1BdXRoQ29kZUZsb3ciLCJhcHBpZCI6IjUzYmViNWJhLTc2MTUtNDhkMS1iZmM0LWFiMjU3NDRhMDkxNiIsImFwcGlkYWNyIjoiMSIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjE0LjIwMS4yMC4yIiwibmFtZSI6IkNsb3VkIiwib2lkIjoiMDlhODcwNDctNGZjYi00ZTVlLWFiNDgtYTE3ZWY5MzU3MGVhIiwicGxhdGYiOiIzIiwicHVpZCI6IjEwMDMyMDAxMTU2RjY4MEMiLCJyaCI6IjAuQVVFQTVYeUxnQ1NaSGtTdVV6NUNfWXB0UTdxMXZsTVZkdEZJdjhTckpYUktDUlpCQUhrLiIsInNjcCI6IlVzZXIuUmVhZCBwcm9maWxlIG9wZW5pZCBlbWFpbCIsInN1YiI6IkgtTEpYMVVzNUlrbW5USlExNHJMVXpRWjFxNGR6bkd3aXBxVE5XUzNNTjAiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiT0MiLCJ0aWQiOiI4MDhiN2NlNS05OTI0LTQ0MWUtYWU1My0zZTQyZmQ4YTZkNDMiLCJ1bmlxdWVfbmFtZSI6IkNsb3VkQGNvcHJ0ZWNoNC50ayIsInVwbiI6IkNsb3VkQGNvcHJ0ZWNoNC50ayIsInV0aSI6ImdqYjBUWHMyVWtTT040ME1hXzBVQUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbImI3OWZiZjRkLTNlZjktNDY4OS04MTQzLTc2YjE5NGU4NTUwOSJdLCJ4bXNfc3QiOnsic3ViIjoiVl9HeFVPZFZ1UkV6aWxFVmdNS2xUMXc5b092UXQyMlIzaW9tVjlRemdMZyJ9LCJ4bXNfdGNkdCI6MTUzMDgzNDM2OH0.m8nmD9MsSnwdfBVuoinCMRHBikL08Gurd6dr7Bj6HtN-cZe4G7UXNXCs42fZRYmTHXDcs5Y4QgQZrSBNRR-X3fDijBQgzl7zBtCy0XcAYgSEbRAI87Qt9PQXm5vlo7h471JAW9UBffL9OXcnxXXyAK7uPSlIdZWMGQ3Ot6unTRhwjHaagnktC1kJvhohZ6NeCrOYiCu35xpV13QPbFVsW_BQtoUP2RtYyxGRlO3RLTkm8X6a42v5hrm5c5vr-a_EKAl7c6PUC1uZAGpIEHBQyFxWr_W-VMsFCbGjw01ika59qd6T-Mklx0PDwtkVFe7MavKweypvDOACgjxVLSE61A
+This token was issued by Azure Active Directory.
+Decoded Token
+Claims
+{
+  "typ": "JWT",
+  "nonce": "ngv7w8O2uKxm21UDzXz0mmww8e3LBEymscTQAkN_W9Y",
+  "alg": "RS256",
+  "x5t": "nOo3ZDrODXEK1jKWhXslHR_KXEg",
+  "kid": "nOo3ZDrODXEK1jKWhXslHR_KXEg"
+}.{
+  "aud": "00000003-0000-0000-c000-000000000000",
+  "iss": "https://sts.windows.net/808b7ce5-9924-441e-ae53-3e42fd8a6d43/",
+  "iat": 1616476304,
+  "nbf": 1616476304,
+  "exp": 1616480204,
+  "acct": 0,
+  "acr": "1",
+  "acrs": [
+    "urn:user:registersecurityinfo",
+    "urn:microsoft:req1",
+    "urn:microsoft:req2",
+    "urn:microsoft:req3",
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "c6",
+    "c7",
+    "c8",
+    "c9",
+    "c10",
+    "c11",
+    "c12",
+    "c13",
+    "c14",
+    "c15",
+    "c16",
+    "c17",
+    "c18",
+    "c19",
+    "c20",
+    "c21",
+    "c22",
+    "c23",
+    "c24",
+    "c25"
+  ],
+  "aio": "ASQA2/8TAAAAV+32wllBBCygChPu8J/G5dbSwZSY+GBKQqfThQLTRD8=",
+  "amr": [
+    "pwd"
+  ],
+  "app_displayname": "AnAuthLab-AuthCodeFlow",
+  "appid": "53beb5ba-7615-48d1-bfc4-ab25744a0916",
+  "appidacr": "1",
+  "idtyp": "user",
+  "ipaddr": "14.201.20.2",
+  "name": "Cloud",
+  "oid": "09a87047-4fcb-4e5e-ab48-a17ef93570ea",
+  "platf": "3",
+  "puid": "10032001156F680C",
+  "rh": "0.AUEA5XyLgCSZHkSuUz5C_YptQ7q1vlMVdtFIv8SrJXRKCRZBAHk.",
+  "scp": "User.Read profile openid email",
+  "sub": "H-LJX1Us5IkmnTJQ14rLUzQZ1q4dznGwipqTNWS3MN0",
+  "tenant_region_scope": "OC",
+  "tid": "808b7ce5-9924-441e-ae53-3e42fd8a6d43",
+  "unique_name": "Cloud@coprtech4.tk",
+  "upn": "Cloud@coprtech4.tk",
+  "uti": "gjb0TXs2UkSON40Ma_0UAA",
+  "ver": "1.0",
+  "wids": [
+    "b79fbf4d-3ef9-4689-8143-76b194e85509"
+  ],
+  "xms_st": {
+    "sub": "V_GxUOdVuREzilEVgMKlT1w9oOvQt22R3iomV9QzgLg"
+  },
+  "xms_tcdt": 1530834368
+}.[Signature]
+```
+
 ## Refresh Token
-Our initial HTTP GET request also contained **offline_access** this when we received the **Access Token** we also received a **REfreshToken**. This **Refresh Token** can be used to generate a new **Access Token** when the initial one expires.
+Our initial HTTP GET request also contained **offline_access** in the **scope**. When we received the **Access Token** we also received a **Refresh Token**. This **Refresh Token** can be used to generate a new **Access Token** when the initial one expires by passing it as the **code** argument.
 
 ![Post Postman Refresh](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowPostPostmanRefresh.png)
 
@@ -68,6 +154,9 @@ Our initial HTTP GET request also contained **offline_access** this when we rece
 ```
 
 # Adding Extra Security
+
+[PKCE RFC](https://tools.ietf.org/html/rfc7636)
+
 ## Proof Key for Code Exchange (PKCE)
 
 Use an online tool [https://tonyxu-io.github.io/pkce-generator/](https://tonyxu-io.github.io/pkce-generator/)
