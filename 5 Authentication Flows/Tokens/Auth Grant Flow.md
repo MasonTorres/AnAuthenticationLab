@@ -5,7 +5,7 @@ Reference [Microsoft identity platform and OAuth 2.0 authorization code flow - M
 ![App Registration](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowAppRegistration.png)
 
 
-|               |               |
+| Key  | Value |
 | ------------- | ------------- |
 | Client ID | 53beb5ba-7615-48d1-bfc4-ab25744a0916 |
 | Client Secret | -2V~PY_35799_nNCumu_-j1oeE0lpHy1Ar |
@@ -45,9 +45,9 @@ Now that we have our **code** we can request the access token from the token end
 
 We will simulate this in Postman using a HTTP POST request.
 
-| Kwy  | Value |
+| Key  | Value |
 | ------------- | ------------- |
-| code  | 0.AUE...AbSxiQIAA |
+| code  | 0.AUEA5XyLg...AbSxiQIAA |
 | grant_type  | authorization_code |
 | client_id  | 53beb5ba-7615-48d1-bfc4-ab25744a0916 |
 | redirect_uri  | https://jwt.ms |
@@ -194,7 +194,8 @@ S5J_4Gl5_l-Lw-Z7HLLGFyBkTOaURlaQ7j-ZXrkNzS3TMSK1hTReqZCLzISjQL36w9cyABE3ZsXn7jY3
 ewGdtDctbdrwSyE1OOcXf9jqyqZecDoleYWfenSZl_w
 ```
 
-### Resend our HTTP GET request with PKCE
+### Resend our HTTP GET request with PKCE 
+We've added the **code_challenege** and **code_challenge_method** arguments
 
 ```
 https://login.microsoftonline.com/808b7ce5-9924-441e-ae53-3e42fd8a6d43/oauth2/v2.0/authorize?
@@ -211,6 +212,6 @@ client_id=53beb5ba-7615-48d1-bfc4-ab25744a0916
 Get our new **code**
 
 ### Send out HTTP POST request PKCE
-notice the **code_verifier** and of course our new **Access Token**
+Notice the **code_verifier** and of course our new **Access Token**
 
 ![Powershell PKCE](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowPKCEAccessToken.png)
