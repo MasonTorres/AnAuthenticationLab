@@ -4,7 +4,6 @@ Reference [Microsoft identity platform and OAuth 2.0 authorization code flow - M
 ### Create a new Application Registration
 ![App Registration](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowAppRegistration.png)
 
-
 ## Create a Client Secret
 
 | Client ID | 53beb5ba-7615-48d1-bfc4-ab25744a0916 |
@@ -13,7 +12,6 @@ Reference [Microsoft identity platform and OAuth 2.0 authorization code flow - M
 ## Grant Admin Consent
 
 ![Admin Consent](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowAdminConsent.png)
-
 
 ### Get Token
 Request a token using HTTP GET
