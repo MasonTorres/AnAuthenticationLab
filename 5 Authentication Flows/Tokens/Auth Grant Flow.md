@@ -46,7 +46,7 @@ Now that we have our **code** we can request the access token from the authoriza
 
 We will simulate this in Postman using a HTTP POST request.
 
-![Post Postman](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowPostPostman1.png)
+![Post Postman](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowPostPostman.png)
 
 **Access Token**
 ```
