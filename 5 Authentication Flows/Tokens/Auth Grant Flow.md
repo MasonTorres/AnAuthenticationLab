@@ -6,6 +6,7 @@ Reference [Microsoft identity platform and OAuth 2.0 authorization code flow - M
 
 ## Create a Client Secret
 
+|               |               |
 | ------------- | ------------- |
 | Client ID | 53beb5ba-7615-48d1-bfc4-ab25744a0916 |
 | Client Secret | -2V~PY_35799_nNCumu_-j1oeE0lpHy1Ar |
