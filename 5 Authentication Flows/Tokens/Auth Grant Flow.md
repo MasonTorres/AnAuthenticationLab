@@ -15,20 +15,22 @@ Using Postman to format our URL
 
 ![Lab Overview](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowGet.png)
 
-Using a browser we login and our code is then returned
+Using a browser we login and our code is then returned.
+
 As our response_mode is equal to **query** the code is returned in the address bar.  Try **form_post** and inspect the header.
 
 ![Lab Overview](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowCode.png)
 
 ### Get Access Token
-Now that we have our code we can request the access token from the authorization endpoint. 
+Now that we have our **code** we can request the access token from the authorization endpoint. 
 
-We will simulate this in Postman
+We will simulate this in Postman using a HTTP POST request.
 
 ![Lab Overview](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowGetAccessToken01.png)
 
 ![Lab Overview](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowGetAccessToken02.png)
 
+# Adding Extra Security
 ## Proof Key for Code Exchange (PKCE)
 
 Use an online tool [https://tonyxu-io.github.io/pkce-generator/](https://tonyxu-io.github.io/pkce-generator/)
