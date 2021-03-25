@@ -27,6 +27,7 @@ Using Postman to format our URL
 
 
 **Login with a Browser**
+
 ![Web Login](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-ImplicitGrantFlowLogin.png)
 
 You will be redirected to https://jwt.ms where your Access Token will be visible. 
