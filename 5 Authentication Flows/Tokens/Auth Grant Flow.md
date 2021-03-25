@@ -211,7 +211,7 @@ client_id=53beb5ba-7615-48d1-bfc4-ab25744a0916
 
 Get our new **code**
 
-### Send out HTTP POST request PKCE
+### Send our HTTP POST request PKCE
 Notice the **code_verifier** and of course our new **Access Token**
 
 ![Powershell PKCE](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowPKCEAccessToken.png)
