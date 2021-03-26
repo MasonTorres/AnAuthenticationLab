@@ -10,6 +10,7 @@ Reference [OAuth 2.0 device code flow - Microsoft identity platform | Microsoft 
 
 
 **Set it to Public**
+
 ![App Registration](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-DeviceCodeFlowAppPublic.png)
 
 ### Request a Device Code ###
@@ -26,7 +27,7 @@ Reference [OAuth 2.0 device code flow - Microsoft identity platform | Microsoft 
 }
 ```
 
-## Valid user ##
+## Validate User ##
 
 Open a browser and navigate to https://microsoft.com/devicelogin
 Enter you device code and login
@@ -37,9 +38,9 @@ Enter you device code and login
 
 ## Check the user has successfully logged in ##
 
-# Using Postman to POST our polling check #
+### Using Postman to POST our polling check ###
 
-Our device code from the initial request.
+Using our device code from the initial request.
 ```Javascript
 PAQABAAEAAAD--DLA3VO7QrddgJg7WevrDev5g_idwoVXCuyIlvsvv52mbsN1GRJI1Zx2OyP3ZZLWpaVvonYwnCNzsU8QULw_GlB4sB-cdwKx6sXjqbZICZGezuk3bC_8dtizPr_Ho63107z3H8LQMAeSocCmt-DmAYiUGUXzg7J7pb3WIuS-rY0jxYuiH9QsQo0WJxdDMJMgAA
 ```
@@ -59,6 +60,6 @@ Our token is returned
 }
 ```
 
-# Check Our Access Token # 
+### Check Our Access Token ###
 
 ![JWT Decoded](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-DeviceCodeFlowJWTDecoded.png)
