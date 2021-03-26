@@ -1,0 +1,64 @@
+# Device Code Flow
+Reference [OAuth 2.0 device code flow - Microsoft identity platform | Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-device-code)
+
+### Create a new Application Registration
+![App Registration](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-DeviceCodeFlowAppRegistration.png)
+
+| Key  | Value |
+| ------------- | ------------- |
+| Client ID | 7a93fcff-5b7c-4a30-96d9-da538dafff11 |
+
+
+**Set it to Public**
+![App Registration](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-DeviceCodeFlowAppPublic.png)
+
+### Request a Device Code ###
+![Device Code](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-DeviceCodeFlowPostmanDeviceCode.png)
+
+```Javascript
+{
+    "user_code": "P5SWARJF6",
+    "device_code": "PAQABAAEAAAD--DLA3VO7QrddgJg7WevrDev5g_idwoVXCuyIlvsvv52mbsN1GRJI1Zx2OyP3ZZLWpaVvonYwnCNzsU8QULw_GlB4sB-cdwKx6sXjqbZICZGezuk3bC_8dtizPr_Ho63107z3H8LQMAeSocCmt-DmAYiUGUXzg7J7pb3WIuS-rY0jxYuiH9QsQo0WJxdDMJMgAA",
+    "verification_uri": "https://microsoft.com/devicelogin",
+    "expires_in": 900,
+    "interval": 5,
+    "message": "To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code P5SWARJF6 to authenticate."
+}
+```
+
+## Valid user ##
+
+Open a browser and navigate to https://microsoft.com/devicelogin
+Enter you device code and login
+
+![Authenticate User with device code](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-DeviceCodeFlowWebCode.png)
+
+![Authenticate User Sucess](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-DeviceCodeFlowWebCodeSuccess.png)
+
+## Check the user has successfully logged in ##
+
+# Using Postman to POST our polling check #
+
+Our device code from the initial request.
+```Javascript
+PAQABAAEAAAD--DLA3VO7QrddgJg7WevrDev5g_idwoVXCuyIlvsvv52mbsN1GRJI1Zx2OyP3ZZLWpaVvonYwnCNzsU8QULw_GlB4sB-cdwKx6sXjqbZICZGezuk3bC_8dtizPr_Ho63107z3H8LQMAeSocCmt-DmAYiUGUXzg7J7pb3WIuS-rY0jxYuiH9QsQo0WJxdDMJMgAA
+```
+
+![Device Code Check](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-DeviceCodeFlowPostmanDeviceCodeCheck.png)
+
+Our token is returned 
+
+```Javascript
+{
+    "token_type": "Bearer",
+    "scope": "openid profile User.Read email",
+    "expires_in": 3599,
+    "ext_expires_in": 3599,
+    "access_token": "eyJ0eXAiOiJKV1QiLCJub25jZSI6IjVBVzFISnkxUVlpS2VyUG1JTXFVc0pwTnZBTFl4VkJTbFpFdlVTbjkzYTgiLCJhbGciOiJSUzI1NiIsIng1dCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyIsImtpZCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC84MDhiN2NlNS05OTI0LTQ0MWUtYWU1My0zZTQyZmQ4YTZkNDMvIiwiaWF0IjoxNjE2NzI5MzE5LCJuYmYiOjE2MTY3MjkzMTksImV4cCI6MTYxNjczMzIxOSwiYWNjdCI6MCwiYWNyIjoiMSIsImFjcnMiOlsidXJuOnVzZXI6cmVnaXN0ZXJzZWN1cml0eWluZm8iLCJ1cm46bWljcm9zb2Z0OnJlcTEiLCJ1cm46bWljcm9zb2Z0OnJlcTIiLCJ1cm46bWljcm9zb2Z0OnJlcTMiLCJjMSIsImMyIiwiYzMiLCJjNCIsImM1IiwiYzYiLCJjNyIsImM4IiwiYzkiLCJjMTAiLCJjMTEiLCJjMTIiLCJjMTMiLCJjMTQiLCJjMTUiLCJjMTYiLCJjMTciLCJjMTgiLCJjMTkiLCJjMjAiLCJjMjEiLCJjMjIiLCJjMjMiLCJjMjQiLCJjMjUiXSwiYWlvIjoiQVNRQTIvOFRBQUFBN0FNbFczNndEWGUxcWJyeXU0bC8rdDFIUFpoNys1cWZDdFhQMWtFUWhxST0iLCJhbXIiOlsicHdkIl0sImFwcF9kaXNwbGF5bmFtZSI6IkFuQXV0aExhYi1EZXZpY2VDb2RlRmxvdyIsImFwcGlkIjoiN2E5M2ZjZmYtNWI3Yy00YTMwLTk2ZDktZGE1MzhkYWZmZjExIiwiYXBwaWRhY3IiOiIwIiwiaWR0eXAiOiJ1c2VyIiwiaXBhZGRyIjoiMTQuMjAxLjIwLjIiLCJuYW1lIjoiQ2xvdWQiLCJvaWQiOiIwOWE4NzA0Ny00ZmNiLTRlNWUtYWI0OC1hMTdlZjkzNTcwZWEiLCJwbGF0ZiI6IjE0IiwicHVpZCI6IjEwMDMyMDAxMTU2RjY4MEMiLCJyaCI6IjAuQVVFQTVYeUxnQ1NaSGtTdVV6NUNfWXB0UV9fOGszcDhXekJLbHRuYVU0MnZfeEZCQUhrLiIsInNjcCI6Im9wZW5pZCBwcm9maWxlIFVzZXIuUmVhZCBlbWFpbCIsInNpZ25pbl9zdGF0ZSI6WyJrbXNpIl0sInN1YiI6IkgtTEpYMVVzNUlrbW5USlExNHJMVXpRWjFxNGR6bkd3aXBxVE5XUzNNTjAiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiT0MiLCJ0aWQiOiI4MDhiN2NlNS05OTI0LTQ0MWUtYWU1My0zZTQyZmQ4YTZkNDMiLCJ1bmlxdWVfbmFtZSI6IkNsb3VkQGNvcHJ0ZWNoNC50ayIsInVwbiI6IkNsb3VkQGNvcHJ0ZWNoNC50ayIsInV0aSI6IkNEQlktdDg0Z2tDLXNTN1VLdktXQUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbImI3OWZiZjRkLTNlZjktNDY4OS04MTQzLTc2YjE5NGU4NTUwOSJdLCJ4bXNfc3QiOnsic3ViIjoiUU9BRVY1RXFaaGR5MDFrY3hUNlF2SGNlNGxncEpRc1dKa1FfUnZSRFFrVSJ9LCJ4bXNfdGNkdCI6MTUzMDgzNDM2OH0.OR8alCP8pJKc3OPCZrhWkKEEIwtcRtQ4wXs0_gk6znObgfx6Pi6-6Gfc_8QZEVXK5qDUF9oaM_Qyi1j-dPOqyUtB8htHtsT2NDoAVWgRrkNEatG_gJFRFuk7R6Nq4HFQ9BwLKwzJIHQpjTv1PKRQF9ZpV0yELhLNWG9AgBMEZJyT6zsPXfRdC7FjpljaEZovIPgBpb9Ix34EJENtpieQ8K2sUQCINAkhAP8-7Mh90vmUa1k2WlfppZkqVqOTbEfbV92uLKEH8m8FNs8QoDNRJVvQ2SbeWWUR5JunBqo9SXW4KwRhb7SfCulz90DNMlZbRHe3345DcYQkEHFEKlFKAQ",
+    "id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyJ9.eyJhdWQiOiI3YTkzZmNmZi01YjdjLTRhMzAtOTZkOS1kYTUzOGRhZmZmMTEiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vODA4YjdjZTUtOTkyNC00NDFlLWFlNTMtM2U0MmZkOGE2ZDQzL3YyLjAiLCJpYXQiOjE2MTY3MjkzMTksIm5iZiI6MTYxNjcyOTMxOSwiZXhwIjoxNjE2NzMzMjE5LCJuYW1lIjoiQ2xvdWQiLCJvaWQiOiIwOWE4NzA0Ny00ZmNiLTRlNWUtYWI0OC1hMTdlZjkzNTcwZWEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJDbG91ZEBjb3BydGVjaDQudGsiLCJyaCI6IjAuQVVFQTVYeUxnQ1NaSGtTdVV6NUNfWXB0UV9fOGszcDhXekJLbHRuYVU0MnZfeEZCQUhrLiIsInN1YiI6IlFPQUVWNUVxWmhkeTAxa2N4VDZRdkhjZTRsZ3BKUXNXSmtRX1J2UkRRa1UiLCJ0aWQiOiI4MDhiN2NlNS05OTI0LTQ0MWUtYWU1My0zZTQyZmQ4YTZkNDMiLCJ1dGkiOiJDREJZLXQ4NGdrQy1zUzdVS3ZLV0FBIiwidmVyIjoiMi4wIn0.n9KWL6eOWK7-sWbBNtaq7BujkW2BwUS9TwHOlV2yUkkDdf4hsZm3w79JYk_ZGV9d3iLUFIBCB4WGrfNRCfPUZP6WCmFcmopPeHvhXSxtGjJLvCK1NyDfjjJpD2GWC7Ez8VU4kQQ2NjZISfhQfBAI0q8OZe7VB9oel_qdwwp9iu1A7KuwZxw-NGt8mh_rkA5mqIIhUVzuxEJL4HqyUGnWvW4CvRCjlzpFfLITPYmKlAUFd34n1KEdE7ricg8PB1Odi5c3Kn9xadXpad0Ab9ldAFAW-z7ZGWGWVxleOfWTZFSQ_CShQ0BeLWqSh3oIoa_4Gb8ZCqHr-Mg7SYmI5NdFTw"
+}
+```
+
+# Check Our Access Token # 
+
+![JWT Decoded](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-DeviceCodeFlowJWTDecoded.png)
