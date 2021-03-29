@@ -2,7 +2,7 @@
 Reference [OAuth 2.0 implicit grant flow - The Microsoft identity platform | Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-implicit-grant-flow)
 
 ### Create a new Application Registration with a redirect URI
-![App Registration](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-ImplicitGrantFlowAppRegistration.png)
+![App Registration](/img/5-AuthFlows-ImplicitGrantFlowAppRegistration.png)
 
 
 | Key  | Value |
@@ -23,16 +23,16 @@ client_id=b749281f-ca24-423f-bf26-6c17a2d211e3
 ```
 Using Postman to format our URL
 
-![Postman](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-ImplicitGrantFlowPostman.png)
+![Postman](/img/5-AuthFlows-ImplicitGrantFlowPostman.png)
 
 
 **Login with a Browser**
 
-![Web Login](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-ImplicitGrantFlowLogin.png)
+![Web Login](/img/5-AuthFlows-ImplicitGrantFlowLogin.png)
 
 You will be redirected to https://jwt.ms where your Access Token will be visible. 
 
-![JWT](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-ImplicitGrantFlowJWTDecoded.png)
+![JWT](/img/5-AuthFlows-ImplicitGrantFlowJWTDecoded.png)
 
 ```
 {

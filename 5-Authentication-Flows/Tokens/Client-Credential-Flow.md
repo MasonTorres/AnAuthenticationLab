@@ -2,7 +2,7 @@
 Reference [OAuth 2.0 client credentials flow on the Microsoft identity platform | Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow)
 
 ### Create a new Application Registration and client secret
-![App Registration](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-ClientCredentialFlowAppRegistration.png)
+![App Registration](/img/5-AuthFlows-ClientCredentialFlowAppRegistration.png)
 
 
 | Key  | Value |
@@ -12,7 +12,7 @@ Reference [OAuth 2.0 client credentials flow on the Microsoft identity platform 
 
 ### Get Access Token using Postman
 Request a token using HTTP POST request to the token endpoint
-![App Registration](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-ClientCredentialFlowAccessToken.png)
+![App Registration](/img/5-AuthFlows-ClientCredentialFlowAccessToken.png)
 
 **Access Token**
 ```
@@ -23,7 +23,7 @@ We now have our **Access Token** and cause use this to access the User.Read Micr
 
 We can decode our **Access Token** to see what's inside. 
 
-![JWT Decode](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowJWTDecoded.png)
+![JWT Decode](/img/5-AuthFlows-AuthGrantFlowJWTDecoded.png)
 
 
 ```Javascript

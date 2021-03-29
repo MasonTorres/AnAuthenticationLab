@@ -2,7 +2,7 @@
 Reference [Microsoft identity platform and OAuth 2.0 authorization code flow - Microsoft identity platform | Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow)
 
 ### Create a new Application Registration and client secret
-![App Registration](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowAppRegistration.png)
+![App Registration](/img/5-AuthFlows-AuthGrantFlowAppRegistration.png)
 
 
 | Key  | Value |
@@ -12,7 +12,7 @@ Reference [Microsoft identity platform and OAuth 2.0 authorization code flow - M
 
 ### Grant Admin Consent
 
-![Admin Consent](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowAdminConsent.png)
+![Admin Consent](/img/5-AuthFlows-AuthGrantFlowAdminConsent.png)
 
 ### Get our code token
 Request a token using HTTP GET request to the authorization endpoint
@@ -27,13 +27,13 @@ client_id=53beb5ba-7615-48d1-bfc4-ab25744a0916
 ```
 Using Postman to format our URL
 
-![Admin Consent](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowGetPostman.png)
+![Admin Consent](/img/5-AuthFlows-AuthGrantFlowGetPostman.png)
 
 Using a browser we login and our code is then returned.
 
 We used **form_post** so our code is returned inside the form data. We can see this data in the developer tools in Edge.
 
-![Get Code](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowGetCode.png)
+![Get Code](/img/5-AuthFlows-AuthGrantFlowGetCode.png)
 
 **Code**
 ```
@@ -54,7 +54,7 @@ We will simulate this in Postman using a HTTP POST request.
 | client_secret  | -2V~PY_35799_nNCumu_-j1oeE0lpHy1Ar |
 | scope  | .default |
 
-![Post Postman](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowPostPostman.png)
+![Post Postman](/img/5-AuthFlows-AuthGrantFlowPostPostman.png)
 
 **Access Token**
 ```
@@ -65,7 +65,7 @@ We now have our **Access Token** and cause use this to access the User.Read Micr
 
 We can decode our **Access Token** to see what's inside. 
 
-![JWT Decode](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowJWTDecoded.png)
+![JWT Decode](/img/5-AuthFlows-AuthGrantFlowJWTDecoded.png)
 
 
 ```Javascript
@@ -149,7 +149,7 @@ We can decode our **Access Token** to see what's inside.
 ## Refresh Token
 Our initial HTTP GET request also contained **offline_access** in the **scope**. When we received the **Access Token** we also received a **Refresh Token**. This **Refresh Token** can be used to generate a new **Access Token** when the initial one expires by passing it as the **code** argument.
 
-![Post Postman Refresh](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowPostPostmanRefresh.png)
+![Post Postman Refresh](/img/5-AuthFlows-AuthGrantFlowPostPostmanRefresh.png)
 
 ```
 0.AUEA5XyLgCSZHkSuUz5C_YptQ7q1vlMVdtFIv8SrJXRKCRZBAHk.AgABAAAAAAD--DLA3VO7QrddgJg7WevrAgDs_wQA9P8fpJxb_KsKERfDte10kpmynDAoNdJ4BF2nffBL5g5HWOHt-ukFPkzho-qcs3A_xczPr22fccLhezHQe8BRkjPe-RyU6vnYkiY39zoOob6baXId2LVdbYOJPdmZ6MdN_PwuyxEBJl7frxq4AQ_JfFLvt7UzSa-O4sOG2Z8uHeGIP2cTAMJM5l4T4FbttRsAfVDgqBSXR8zN4SJ4hgBoyh3OqNTyRZB_4vP6yWHXGTksXlx6HVQRSbV7eDQ4vFeJWuQHnI161ZOBp9_UPtmS_wlRdT0u2cdSUuOToktgIPvkfOSrILzQf4-A3_8BT5AnvsB4F1Vm20NxjjFu6kmGZVjgB0vqFINmILg-eewCxa4ASl_nMGPZwn4WklY-NdACw3fh5Ju5ROwwlSiC_nFsJ5wZjMPvVKujdkeQF-3ch_1dKZaOzayeiG2_qxZDO5xlwtFq5nQnO8E80_UMkDkfjGX2okShV2RwJU--D5p6ZsqeiV2I8gxU36-cIYbr68jRKUy77DvX9W72hOK0KhGlKIgW87X3Mt85q56aSlsxxobXn-1MbN7KQaJGX38XqIfwo43JXGnsv50j0pOfJBzBetC8x4iDL94j5Wu1AbzQBKAdB8lO1O12W-2SZU4x037ny5KV3WhYWrlO6eQIKDaSz0T_xe0jv2gv0-SD_rMHvaYDQ1-GjG2QrUPD5iKXkZyoSeh_LOByF981nh2LNr6yWB8GZv6vE2oqqxDNB_QV2riRhZgIlLS7MDE2DwfK6bCswzj_ZcZQvkO_nsZ6I-pehVWm6QA4OQ_suuM65ggT6XUtHnJtXyEnQJ83CWblFB-1z2GXtJew4wqOmNyLeXtAxrPgD7xDhLG4NR_h8HSV0BpdsbM5ZK0qBL64lclDSh6aJWXJg4rWdSn2wzNK0-g
@@ -182,7 +182,7 @@ $codeChallenge = $codeChallenge.Replace('+', '–')
 $codeChallenge = $codeChallenge.Replace('/', '_')
 ```
 
-![Powershell PKCE](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowPowerShellPKCE.png)
+![Powershell PKCE](/img/5-AuthFlows-AuthGrantFlowPowerShellPKCE.png)
 
 **Code_Verify**
 ```
@@ -214,4 +214,4 @@ Get our new **code**
 ### Send our HTTP POST request PKCE
 Notice the **code_verifier** and of course our new **Access Token**
 
-![Powershell PKCE](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-AuthGrantFlowPKCEAccessToken.png)
+![Powershell PKCE](/img/5-AuthFlows-AuthGrantFlowPKCEAccessToken.png)

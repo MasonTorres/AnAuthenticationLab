@@ -2,7 +2,7 @@
 Reference [OAuth 2.0 device code flow - Microsoft identity platform | Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-device-code)
 
 ### Create a new Application Registration
-![App Registration](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-DeviceCodeFlowAppRegistration.png)
+![App Registration](/img/5-AuthFlows-DeviceCodeFlowAppRegistration.png)
 
 | Key  | Value |
 | ------------- | ------------- |
@@ -11,10 +11,10 @@ Reference [OAuth 2.0 device code flow - Microsoft identity platform | Microsoft 
 
 **Set it to Public**
 
-![App Registration](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-DeviceCodeFlowAppPublic.png)
+![App Registration](/img/5-AuthFlows-DeviceCodeFlowAppPublic.png)
 
 ### Request a Device Code ###
-![Device Code](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-DeviceCodeFlowPostmanDeviceCode.png)
+![Device Code](/img/5-AuthFlows-DeviceCodeFlowPostmanDeviceCode.png)
 
 ```Javascript
 {
@@ -32,9 +32,9 @@ Reference [OAuth 2.0 device code flow - Microsoft identity platform | Microsoft 
 Open a browser and navigate to https://microsoft.com/devicelogin
 Enter you device code and login
 
-![Authenticate User with device code](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-DeviceCodeFlowWebCode.png)
+![Authenticate User with device code](/img/5-AuthFlows-DeviceCodeFlowWebCode.png)
 
-![Authenticate User Sucess](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-DeviceCodeFlowWebCodeSuccess.png)
+![Authenticate User Sucess](/img/5-AuthFlows-DeviceCodeFlowWebCodeSuccess.png)
 
 ## Check the user has successfully logged in ##
 
@@ -45,7 +45,7 @@ Using our device code from the initial request.
 PAQABAAEAAAD--DLA3VO7QrddgJg7WevrDev5g_idwoVXCuyIlvsvv52mbsN1GRJI1Zx2OyP3ZZLWpaVvonYwnCNzsU8QULw_GlB4sB-cdwKx6sXjqbZICZGezuk3bC_8dtizPr_Ho63107z3H8LQMAeSocCmt-DmAYiUGUXzg7J7pb3WIuS-rY0jxYuiH9QsQo0WJxdDMJMgAA
 ```
 
-![Device Code Check](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-DeviceCodeFlowPostmanDeviceCodeCheck.png)
+![Device Code Check](/img/5-AuthFlows-DeviceCodeFlowPostmanDeviceCodeCheck.png)
 
 Our token is returned 
 
@@ -62,4 +62,4 @@ Our token is returned
 
 ### Check Our Access Token ###
 
-![JWT Decoded](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/AuthFlows-DeviceCodeFlowJWTDecoded.png)
+![JWT Decoded](/img/5-AuthFlows-DeviceCodeFlowJWTDecoded.png)
