@@ -21,7 +21,7 @@ Begin by completing the prerequisites to get our base environment setup
 1. Azure Active Directory Connect
 2. On-Premise applications - Using SAML, WSFED and OpenID with ADFS
 3. On-Premise applications - Using SAML, WSFED and OpenID with Azure AD
-4. On-Premise applications - Proxy an application using App Proxy and use Header Based SSO
+4. [On-Premise applications - Proxy an application using App Proxy and use Header Based SSO](4-Header-Based-SSO/readme.md)
 5. Authentication flows - OAuth and OpenID
     - OpenID
     - Password / ROPC

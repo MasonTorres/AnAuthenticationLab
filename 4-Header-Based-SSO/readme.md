@@ -29,3 +29,6 @@ Reference [Header-based single sign-on for on-premises apps with Azure AD App Pr
 **Load our test website**
 
 ![Inspect Our Headers](/img/4-HBSSO-TestWebsite.png)
+
+### Troubleshooting
+[Fiddler Trace](/4-Header-Based-SSO/Troubleshoot-Fiddler.md)
