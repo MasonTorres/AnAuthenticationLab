@@ -4,10 +4,10 @@ Let's start with an on-premises environment that synchronises accounts to Azure 
 Our lab looks a little like this and will grow as we add capabilities.
 
 ## Order of Lab Components
-![Lab Process](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/Lab-Order.png)
+![Lab Process](img/Lab-Order.png)
 
 ## Overview of Lab environment
-![Lab Overview](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/Lab-Overview.png)
+![Lab Overview](img/Lab-Overview.png)
 
 ### Prerequisits
 Begin by completing the prerequisites to get our base environment setup
@@ -32,4 +32,4 @@ Begin by completing the prerequisites to get our base environment setup
     - Custom Policies
 
 ## Our Test Users
-![Lab Users](https://github.com/MasonTorres/AnAuthenticationLab/blob/master/img/Lab-Users.png)
+![Lab Users](img/Lab-Users.png)
