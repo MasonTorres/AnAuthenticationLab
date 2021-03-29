@@ -1,7 +1,7 @@
 # SAML On-Premises App with ADFS
 
 ## Install IIS and SimpleSAML
-1. Download SimpleSAMLphp 
+1. Download [SimpleSAMLphp](https://simplesamlphp.org/download)
 2. Extract to a new directory e.g. C:\inetpub\simplesaml
 3. Create a new site e.g. saml
 4. Create a virtual directory and point to simplesaml\www
