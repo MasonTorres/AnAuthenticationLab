@@ -19,13 +19,13 @@ Begin by completing the prerequisites to get our base environment setup
 
 ### Build Your Environment
 1. Azure Active Directory Connect
-2. On-Premise applications - Using SAML, WSFED and OpenID with ADFS
+2. [On-Premise applications](2-On-Premise-Apps-AD-Auth/readme.md) - Using SAML, WSFED and OpenID with ADFS
     - [SAML App](2-On-Premise-Apps-AD-Auth/OnPremApp-SAML-ADFS.md)
         - [Fiddler Trace](2-On-Premise-Apps-AD-Auth/OnPremApp-SAML-ADFS-Fiddler.md)
         - [SAML Request / SAML Response](2-On-Premise-Apps-AD-Auth/OnPremApp-SAML-Response.md)
     - WS-Federation App
     - OpenID App
-3. On-Premise applications - Using SAML, WSFED and OpenID with Azure AD
+3. [On-Premise applications](3-On-Premise-Apps-Azure-AD-Auth/readme.md) - Using SAML, WSFED and OpenID with Azure AD
 4. [On-Premise applications - Proxy an application using App Proxy and use Header Based SSO](4-Header-Based-SSO/readme.md)
 5. Authentication flows - OAuth and OpenID
     - OpenID
