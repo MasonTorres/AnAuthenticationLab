@@ -2,7 +2,7 @@
 
 1. On-Premise applications - Using SAML, WSFED and OpenID with Azure AD
     - SAML App
-        - Fiddler Trace]
+        - Fiddler Trace
     - WS-Federation App
     - OpenID App
 
