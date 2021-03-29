@@ -6,7 +6,7 @@
 3. Create a new site e.g. saml
 4. Create a virtual directory and point to simplesaml\www
 
-![Install IIS](/img/2-AnPrem-SAML-IISInstall.png)
+![Install IIS](/img/2-OnPrem-SAML-IISInstall.png)
 
 5. Update config.php
 
@@ -23,7 +23,7 @@
 
 6. Browse to [https://saml.coprtech4.com/simplesaml](https://saml.coprtech4.com/simplesaml) to confirm SimpleSAML is accessible.
 
-    ![SimpleSAMLSuccess](/img/2-AnPrem-SAML-SimpleSAMLSuccess.png)
+    ![SimpleSAMLSuccess](/img/2-OnPrem-SAML-SimpleSAMLSuccess.png)
 
 ## Confirgure SimpleSAML and ADFS
 
@@ -31,7 +31,7 @@
 2. Convert the XML to a format SimpleSAML can use
     - Open SimpleSAML federation tab
 
-    ![SimpleSAMLFederation](/img/2-AnPrem-SAML-SimpleSAMLFederation.png)
+    ![SimpleSAMLFederation](/img/2-OnPrem-SAML-SimpleSAMLFederation.png)
 
     - Click XML to SimpleSAMLphp metadata converter
     - Upload or paste FederationMetadata.xml and parse
@@ -39,14 +39,14 @@
     - Edit the metadata file **saml20-idp-remote.php** in the SimpleSaml directory
     - Paste the parsed code and save
 
-    ![SimpleSAMLFederationXML](/img/2-AnPrem-SAML-SimpleSAMLFederationXML.png)
+    ![SimpleSAMLFederationXML](/img/2-OnPrem-SAML-SimpleSAMLFederationXML.png)
 
 ### Configure SimpleSAML Service Provider - Our App!    
 
 1. Edit authsources.php from simplesaml\config directory
 2. Use the examples in the file to create the new SP
 
-    ![SimpleSAMLAuthSources](/img/2-AnPrem-SAML-SimpleSAMLAuthSources.png)
+    ![SimpleSAMLAuthSources](/img/2-OnPrem-SAML-SimpleSAMLAuthSources.png)
 
 3. Create a new cert to be used by the SP
     - openssl req -x509 -nodes -sha256 -days 730 -newkey rsa:2048 -keyout my.key -out my.pem
@@ -54,7 +54,7 @@
 5. Return to the SimpleSAML web interface to confirm setup https://saml.coprtech4.com/simplesaml/module.php/core/frontpage_federation.php#
     Notice the new metadata **saml-app-coprtech4-sp**
 
-    ![SimpleSAMLFederationSP](/img/2-AnPrem-SAML-SimpleSAMLFederationSP.png)
+    ![SimpleSAMLFederationSP](/img/2-OnPrem-SAML-SimpleSAMLFederationSP.png)
 
     Make note of the URL https://saml.coprtech4.com/simplesaml/module.php/saml/sp/metadata.php/saml-app-coprtech4-sp
 
@@ -63,17 +63,17 @@
 1. Open ADFS management
 2. Add Replying Part Trust
 
-    ![ADFSRelyingParty](/img/2-AnPrem-SAML-ADFSRelyingParty.png)
+    ![ADFSRelyingParty](/img/2-OnPrem-SAML-ADFSRelyingParty.png)
 
 3. Create some claims
 
-    ![ADFSClaims](/img/2-AnPrem-SAML-ADFSClaims.png)
+    ![ADFSClaims](/img/2-OnPrem-SAML-ADFSClaims.png)
 
 4. Create **Transform an Incoming Claim** rule
 
-    ![ADFSTransformations](/img/2-AnPrem-SAML-ADFSTransformations.png)
+    ![ADFSTransformations](/img/2-OnPrem-SAML-ADFSTransformations.png)
 
-    ![ADFSIssuance](/img/2-AnPrem-SAML-ADFSIssuance.png)
+    ![ADFSIssuance](/img/2-OnPrem-SAML-ADFSIssuance.png)
 
 ## Create Our App
 
@@ -126,13 +126,13 @@ $as->logout(array(
 ```
 3. Test the app - Navigate to https://saml.coprtech4.com/
 
-    ![TestWeb01](/img/2-AnPrem-SAML-TestWeb01.png)
+    ![TestWeb01](/img/2-OnPrem-SAML-TestWeb01.png)
 
 4. You will be redirected to ADFS. Login.
 
-    ![TestWeb02](/img/2-AnPrem-SAML-TestWeb02.png)
+    ![TestWeb02](/img/2-OnPrem-SAML-TestWeb02.png)
 
-4. 	5. On successful login, ADFS will redirect you back to the app with the claims
-     The app prints out the claims
+4. On successful login, ADFS will redirect you back to the app with the claims
+    The app prints out the claims
 
-    ![TestWeb03](/img/2-AnPrem-SAML-TestWeb03.png)
+    ![TestWeb03](/img/2-OnPrem-SAML-TestWeb03.png)
