@@ -27,6 +27,7 @@ Begin by completing the prerequisites to get our base environment setup
     - OpenID App
 3. [On-Premise applications](3-On-Premise-Apps-Azure-AD-Auth/readme.md) - Using SAML, WSFED and OpenID with Azure AD
 4. [On-Premise applications - Proxy an application using App Proxy and use Header Based SSO](4-Header-Based-SSO/readme.md)
+    - [Troubleshooting with Fiddler](4-Header-Based-SSO/Troubleshoot-Fiddler.md)
 5. Authentication flows - OAuth and OpenID
     - OpenID
     - Password / ROPC
