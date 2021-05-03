@@ -34,6 +34,7 @@ Begin by completing the prerequisites to get our base environment setup
     - [Client Credential](5-Authentication-Flows/Tokens/Client-Credential-Flow.md)
     - [Implicit Grant Flow](5-Authentication-Flows/Tokens/Implicit-Grant-Flow.md)
     - [Auth Grant Flow](5-Authentication-Flows/Tokens/Auth-Grant-Flow.md)
+        - [Auth Grant Flow PKCE SPA (Signle Page App)](5-Authentication-Flows/Tokens/Auth-Grant-Flow-SPA-with-PKCE.md)
     - [Device Code Flow](5-Authentication-Flows/Tokens/Device-Code-Flow.md)
 6. B2C
     - Custom Policies
