@@ -24,7 +24,9 @@ Begin by completing the prerequisites to get our base environment setup
         - [Fiddler Trace](2-On-Premise-Apps-AD-Auth/OnPremApp-SAML-ADFS-Fiddler.md)
         - [SAML Request / SAML Response](2-On-Premise-Apps-AD-Auth/OnPremApp-SAML-Response.md)
     - WS-Federation App
+        - Fiddler Trace
     - OpenID App
+        - [Fiddler Trace](2-On-Premise-Apps-AD-Auth/OnPremApp-OIDC-ADFS-Fiddler.md)
 3. [On-Premise applications](3-On-Premise-Apps-Azure-AD-Auth/readme.md) - Using SAML, WSFED and OpenID with Azure AD
 4. [On-Premise applications - Proxy an application using App Proxy and use Header Based SSO](4-Header-Based-SSO/readme.md)
     - [Troubleshooting with Fiddler](4-Header-Based-SSO/Troubleshoot-Fiddler.md)
@@ -36,7 +38,8 @@ Begin by completing the prerequisites to get our base environment setup
     - [Auth Grant Flow](5-Authentication-Flows/Tokens/Auth-Grant-Flow.md)
         - [Auth Grant Flow PKCE SPA (Signle Page App)](5-Authentication-Flows/Tokens/Auth-Grant-Flow-SPA-with-PKCE.md)
     - [Device Code Flow](5-Authentication-Flows/Tokens/Device-Code-Flow.md)
-6. B2C
+6. Protecting an API
+7. B2C
     - Custom Policies
 
 ## Our Test Users
