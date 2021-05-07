@@ -21,7 +21,7 @@ Begin by completing the prerequisites to get our base environment setup
 1. Azure Active Directory Connect
 2. [On-Premise applications](2-On-Premise-Apps-AD-Auth/readme.md) - Using SAML, WSFED and OpenID with ADFS
     - [SAML App](2-On-Premise-Apps-AD-Auth/OnPremApp-SAML-ADFS.md)
-        - [Fiddler Trace](2-On-Premise-Apps-AD-Auth/OnPremApp-SAML-ADFS-Fiddler.md)
+        - Fiddler Trace
         - [SAML Request / SAML Response](2-On-Premise-Apps-AD-Auth/OnPremApp-SAML-Response.md)
     - WS-Federation App
         - Fiddler Trace
