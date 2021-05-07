@@ -1,5 +1,7 @@
 # Troubelshooting with Fiddler
 
+Running Fiddler on the machine accessing the WSFED application.
+
 **Access the WSFED application**
 
 ![WSFED-Fiddler](/img/2-OnPrem-WSFED-Fiddler06.png)
