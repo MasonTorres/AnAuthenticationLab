@@ -24,7 +24,7 @@ Begin by completing the prerequisites to get our base environment setup
         - Fiddler Trace
         - [SAML Request / SAML Response](2-On-Premise-Apps-AD-Auth/OnPremApp-SAML-Response.md)
     - WS-Federation App
-        - Fiddler Trace
+        - [Fiddler Trace](2-On-Premise-Apps-AD-Auth/OnPremApp-WSFED-ADFS-Fiddler.md)
     - OpenID App
         - [Fiddler Trace](2-On-Premise-Apps-AD-Auth/OnPremApp-OIDC-ADFS-Fiddler.md)
 3. [On-Premise applications](3-On-Premise-Apps-Azure-AD-Auth/readme.md) - Using SAML, WSFED and OpenID with **Azure AD**
