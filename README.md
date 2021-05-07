@@ -19,7 +19,7 @@ Begin by completing the prerequisites to get our base environment setup
 
 ### Build Your Environment
 1. Azure Active Directory Connect
-2. [On-Premise applications](2-On-Premise-Apps-AD-Auth/readme.md) - Using SAML, WSFED and OpenID with ADFS
+2. [On-Premise applications](2-On-Premise-Apps-AD-Auth/readme.md) - Using SAML, WSFED and OpenID with **ADFS**
     - [SAML App](2-On-Premise-Apps-AD-Auth/OnPremApp-SAML-ADFS.md)
         - Fiddler Trace
         - [SAML Request / SAML Response](2-On-Premise-Apps-AD-Auth/OnPremApp-SAML-Response.md)
@@ -27,7 +27,14 @@ Begin by completing the prerequisites to get our base environment setup
         - Fiddler Trace
     - OpenID App
         - [Fiddler Trace](2-On-Premise-Apps-AD-Auth/OnPremApp-OIDC-ADFS-Fiddler.md)
-3. [On-Premise applications](3-On-Premise-Apps-Azure-AD-Auth/readme.md) - Using SAML, WSFED and OpenID with Azure AD
+3. [On-Premise applications](3-On-Premise-Apps-Azure-AD-Auth/readme.md) - Using SAML, WSFED and OpenID with **Azure AD**
+    - SAML App
+        - Fiddler Trace
+        - SAML Request / SAML Response
+    - WS-Federation App
+        - Fiddler Trace
+    - OpenID App
+        - Fiddler Trace
 4. [On-Premise applications - Proxy an application using App Proxy and use Header Based SSO](4-Header-Based-SSO/readme.md)
     - [Troubleshooting with Fiddler](4-Header-Based-SSO/Troubleshoot-Fiddler.md)
 5. Authentication flows - OAuth and OpenID
