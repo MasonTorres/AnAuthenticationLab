@@ -22,7 +22,8 @@
 ![WSFED-Fiddler](/img/2-OnPrem-WSFED-Fiddler05.png)
 
 Below is an example HTML forms based POST request which gets called automatically when the page loads `window.setTimeout('document.forms[0].submit()', 0);`
-You can see all the XMl claims being sent with the POST request.
+
+You can see all the XML claims being sent with the POST request.
 
 
 ```html
@@ -110,3 +111,7 @@ You can see all the XMl claims being sent with the POST request.
 
 </html>
 ```
+
+**The ADFS redirect takes us back to the WSFED application, we can see the claims that were passed.**
+
+![WSFED-Fiddler](/img/2-OnPrem-WSFED-Fiddler07.png)
